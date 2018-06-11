@@ -1,11 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>index</title>
-<link rel="stylesheet" type="text/css" href="css/zhuye.css" />
+<link href="css/base.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
 <link href="css/media.css" rel="stylesheet">
 <script type="text/javascript" src="js/myfocus-2.0.4.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/zhuye.css" />
+
 <!--[if lt IE 9]>
 <script src="js/modernizr.js"></script>
 <![endif]-->
@@ -13,68 +16,28 @@
 <!-- 返回顶部调用 begin -->
 <script type="text/javascript" src="js/up/jquery.js"></script>
 <script type="text/javascript" src="js/up/js.js"></script>
+<script type="text/javascript">
+//设置
+myFocus.set({
+	id:'myFocus',//ID
+	pattern:'mF_fancy'//风格
+});
+</script>  
 <!-- 返回顶部调用 end-->
 <style>
 
 </style>
- <script type="text/javascript">
- window.onload=function(){
- 	var wrap=document.getElementById('wrap'),
-	pic=document.getElementById('pic').getElementsByTagName("li"),
- 	list=document.getElementById('list').getElementsByTagName('li'),
- 	index=0,
- 	timer=null;
- 
- 	// 定义并调用自动播放函数
- 	timer = setInterval(autoPlay, 2000);
- 
- 	// 鼠标划过整个容器时停止自动播放
- 	wrap.onmouseover = function () {
- 		clearInterval(timer);
- 	}
-	//wrap.onmousemove = function(){}
- 
- 	// 鼠标离开整个容器时继续播放至下一张
- 	wrap.onmouseout = function () {
- 		timer = setInterval(autoPlay, 2000);
- 	}
- 	// 遍历所有数字导航实现划过切换至对应的图片
- 	for (var i = 0; i < list.length; i++) {
- 		list[i].onmouseover = function () {
- 			clearInterval(timer);
- 			index = this.innerText - 1;
- 			changePic(index);
- 		};
- 	};
- 
- 	function autoPlay () {
- 		if (++index >= pic.length) index = 0;
- 			changePic(index);
- 	}
- 
- 	// 定义图片切换函数
- 	function changePic (curIndex) {
- 		for (var i = 0; i < pic.length; ++i) {
- 			pic[i].style.display = "none";
- 			list[i].className = "";
- 		}
- 		pic[curIndex].style.display = "block";
- 		list[curIndex].className = "on";
- 	}
 
- };                             
- 
- </script> 
 </head>
 
-<body>
+<body style="background-color:#eee">
 
 <div class="biaotilan1">
     My Blog 创作中心
 </div>
 <div class="biaotilan2">
 <button style=" width:100px;height:40px;background-color:#FFF; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">写博客</button>
-</div>
+</div>    
 <div class="biaotilan3">  
    <p>姓名</p>
     
@@ -82,48 +45,122 @@
 <div class="biaotilan4">  
   <button style=" width:60px;height:40px;background-color:#FFF; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">|退出</button>
 </div>    
-<div class="graybox"> </div> 
-<div class="graybox1"> </div> 
-<div class="graybox2"> </div>  
-<div class="graybox3"> </div>  
+
 <div class="bigbox">
-<div class="nav">
-<ul>
-<li><a href="#tuijian">推荐</a></li>
-<li><a href="#zuixin">最新文章</a></li>
-<li><a href="#zixun">资讯</a></li>
-<li><a href="#game">游戏开发</a></li>
-<li><a href="#qianduan">前端</a></li>
-<li><a href="#yunwei">运维</a></li>
-<li><a href="#dashuju">大数据</a></li>
-<li><a href="#jisuanjijichu">计算机基础</a></li>
-<li><a href="#yinshipin">音视频开发</a></li>
-<li><a href="#anquan">安全</a></li>
-<li><a href="#qita">其他</a></li>
-</ul>
-</div>
+    <div class="nav">
+    <ul>
+    <li><a href="#tuijian">推荐</a></li>
+    <li><a href="#zuixin">最新文章</a></li>                      
+    <li><a href="#zixun">资讯</a></li>
+    <li><a href="#game">游戏开发</a></li>
+    <li><a href="#qianduan">前端</a></li>
+    <li><a href="#yunwei">运维</a></li>
+    <li><a href="#dashuju">大数据</a></li>
+    <li><a href="#jisuanjijichu">计算机基础</a></li>
+    <li><a href="#yinshipin">音视频开发</a></li>
+    <li><a href="#anquan">安全</a></li>
+    <li><a href="#qita">其他</a></li>
+    </ul>
+    </div>
+    <div class="graybox"></div>
 
-<div class="section">
-	<div class="wrap" id='wrap'>
- <ul id="pic">
- <li><img src="1.jpg" title="变形计"alt=""  style="width:800px"></li>
- <li><img src="2.jpg" title="潮流时尚"alt=""></li>
- <li><img src="3.jpg" title="王菲" alt=""></li>
- <li><img src="1.jpg" title="蔡依林"alt=""></li>
- <li><img src="2.jpg" title="蔡依林"alt=""></li>
- </ul>
- <ol id="list">
- <li class="on">1</li>
- <li>2</li>
- <li>3</li>
- <li>4</li>
- <li>5</li>
- </ol>
- </div>
-	
-</div> 
+    <div id="section">
+        <div id="myFocus"><!--焦点图盒子-->
+           <div class="loading"></div>
+            <!--载入画面(可删除)-->
+            <div class="pic"><!--图片列表-->
+              <ul>
+                <li><a href="#1"><img src="img/1.jpg" thumb="" alt="酷站代码整理" text="图片1更详细的描述文字" /></a></li>
+                <li><a href="#2"><img src="images/2m.jpg" thumb="" alt="酷站代码特效大全" text="图片2更详细的描述文字" /></a></li>
+                <li><a href="#3"><img src="images/3m.jpg" thumb="" alt="酷站代码特效" text="图片3更详细的描述文字" /></a></li>
+                <li><a href="#4"><img src="images/4m.jpg" thumb="" alt="酷站代码素材" text="图片4更详细的描述文字" /></a></li>
+                <li><a href="#5"><img src="images/5m.jpg" thumb="" alt="酷站代码教程" text="图片5更详细的描述文字" /></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>	
+        <div class="focustext f_r">
+          <section class="ft01">
+            <h3><a href="/" target="_blank">住在手机里的朋友</a></h3>
+            <p>通信时代，无论是初次相见还是老友重逢，交换联系方式，常常是彼此交换名片</p>
+          </section>
+          <section class="ft02">
+            <h3><a href="/" target="_blank">教你怎样用欠费手机拨...</a></h3>
+            <p>在快节奏的生活里，我们不知不觉中就成为住在别人手机里的朋友。</p>
+          </section>
+        </div>
+    
+        <div class="topnews">
+          <h2><span><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a></span>
+          <b>文章</b>推荐</h2>
+          <div class="blogs">
+            <figure><img src="images/01.jpg"></figure>
+            <ul>
+              <h3><a href="/">住在手机里的朋友</a></h3>
+              <p> ...</p>
+              <p class="autor"><span class="lm f_l"><a href="/">机友汇</a></span><span class="dtime f_l">2014-02-19</span>
+              <span class="viewnum f_r">浏览（<a href="/">459</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+            </ul>
+          </div>
+          <div class="blogs">
+            <figure><img src="images/02.jpg"></figure>
+            <ul>
+              <h3><a href="/">教你怎样用欠费手机拨打电话</a></h3>
+              <p>...</p>
+              <p class="autor"><span class="lm f_l"><a href="/">机友汇</a></span><span class="dtime f_l">2014-02-19</span>
+              <span class="viewnum f_r">浏览（<a href="/">459</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+            </ul>
+          </div>
+          <div class="blogs">
+            <figure><img src="images/03.jpg"></figure>
+            <ul>
+              <h3><a href="/">原来以为，一个人的勇敢是，删掉他的手机号码...</a></h3>
+              <p>... </p>
+              <p class="autor"><span class="lm f_l"><a href="/">机友汇</a></span><span class="dtime f_l">2014-02-19</span>
+              <span class="viewnum f_r">浏览（<a href="/">459</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+            </ul>
+          </div>
+          <div class="blogs">
+            <figure><img src="images/04.jpg"></figure>
+            <ul>
+              <h3><a href="/">手机的16个惊人小秘密，据说99.999%的人都不知</a></h3>
+              <p>...</p>
+              <p class="autor"><span class="lm f_l"><a href="/">机友汇</a></span><span class="dtime f_l">2014-02-19</span>
+              <span class="viewnum f_r">浏览（<a href="/">459</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+            </ul>
+          </div>
+          <div class="blogs">
+            <figure><img src="images/05.jpg"></figure>
+            <ul>
+              <h3><a href="/">你面对的是生活而不是手机</a></h3>
+              <p>...</p>
+              <p class="autor"><span class="lm f_l"><a href="/">机友汇</a></span><span class="dtime f_l">2014-02-19</span>
+              <span class="viewnum f_r">浏览（<a href="/">459</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+            </ul>
+          </div>
+          <div class="blogs">
+            <figure><img src="images/06.jpg"></figure>
+            <ul>
+              <h3><a href="/">豪雅手机正式发布! 在法国全手工打造的奢侈品</a></h3>
+              <p>...</p>
+              <p class="autor"><span class="lm f_l"><a href="/">机友汇</a></span><span class="dtime f_l">2014-02-19</span>
+              <span class="viewnum f_r">浏览（<a href="/">459</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+            </ul>
+          </div>
+          <div class="blogs">
+            <figure><img src="images/04.jpg"></figure>
+            <ul>
+              <h3><a href="/">手机的16个惊人小秘密，据说99.999%的人都不知</a></h3>
+              <p>...</p>
+              <p class="autor"><span class="lm f_l"><a href="/">机友汇</a></span><span class="dtime f_l">2014-02-19</span>
+              <span class="viewnum f_r">浏览（<a href="/">459</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> 
 
-<!--<div class="news">99</div>   -->
+
 </div>
 <br/><br/><br/>
 </body>

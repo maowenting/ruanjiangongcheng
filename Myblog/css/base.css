@@ -9,7 +9,7 @@ a { outline: none; }
 a:link, a:visited { text-decoration: none; color: #666 }
 .clear { clear: both; }
 .blank { height: 5px; overflow: hidden; width: 100%; margin: auto; clear: both }
-.f_l { float: left }
+.f_l { float: left } 
 .f_r { float: right }
 .l_box { width: 670px; }
 .r_box { width: 300px; }

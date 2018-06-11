@@ -1,8 +1,8 @@
 @charset "gb2312";
 /* »ÃµÆÆ¬ 1*/
 
-#myFocus { width: 450px; height: 300px; }
-.banner { width : 450px; overflow : hidden; }
+#myFocus { width: 550px; height:300px; }
+.banner { width : 550px; overflow : hidden; }
 /* 
 #slide-runner { height : 280px; width : 670px; overflow : hidden; position : absolute; }
 #slide-holder img { position : absolute; }
@@ -15,8 +15,8 @@
 
 
 
-.focustext { width: 220px; background: #fff; height: 300px; overflow: hidden; height: 312px }
-.focustext section { color: #FFF; padding: 20px; height: 116px }
+.focustext { width: 360px; background: #fff; height: 312px; overflow: hidden; }
+.focustext section { color: #FFF; padding: 20px; height: 120px }
 .focustext section h3 { line-height: 40px; font-size: 16px }
 .focustext section h3 a { color: #FFF }
 .focustext section h3 a:hover { text-decoration: underline }
@@ -25,7 +25,7 @@
 .focustext section:hover { }
 /*×óÎÄÕÂÁÐ±í*/
 
-.topnews { margin: 20px 0; }
+.topnews { margin-top:360px; margin-left:220px; background-color:#fff;}
 .topnews h2 { font-size: 16px; font-weight: bold; line-height: 36px; color: #333; border-bottom: #db6d4c 4px solid; }
 .topnews h2 b { }
 .topnews h2 span { float: right; font-size: 12px; font-weight: normal; }
