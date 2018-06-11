@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>写文章</title>
+<title>index</title>
 <link rel="stylesheet" type="text/css" href="css/zhuye.css" />
 <link href="css/media.css" rel="stylesheet">
 <script type="text/javascript" src="js/myfocus-2.0.4.min.js"></script>
@@ -15,8 +15,56 @@
 <script type="text/javascript" src="js/up/js.js"></script>
 <!-- 返回顶部调用 end-->
 <style>
-</style>
 
+</style>
+ <script type="text/javascript">
+ window.onload=function(){
+ 	var wrap=document.getElementById('wrap'),
+	pic=document.getElementById('pic').getElementsByTagName("li"),
+ 	list=document.getElementById('list').getElementsByTagName('li'),
+ 	index=0,
+ 	timer=null;
+ 
+ 	// 定义并调用自动播放函数
+ 	timer = setInterval(autoPlay, 2000);
+ 
+ 	// 鼠标划过整个容器时停止自动播放
+ 	wrap.onmouseover = function () {
+ 		clearInterval(timer);
+ 	}
+	//wrap.onmousemove = function(){}
+ 
+ 	// 鼠标离开整个容器时继续播放至下一张
+ 	wrap.onmouseout = function () {
+ 		timer = setInterval(autoPlay, 2000);
+ 	}
+ 	// 遍历所有数字导航实现划过切换至对应的图片
+ 	for (var i = 0; i < list.length; i++) {
+ 		list[i].onmouseover = function () {
+ 			clearInterval(timer);
+ 			index = this.innerText - 1;
+ 			changePic(index);
+ 		};
+ 	};
+ 
+ 	function autoPlay () {
+ 		if (++index >= pic.length) index = 0;
+ 			changePic(index);
+ 	}
+ 
+ 	// 定义图片切换函数
+ 	function changePic (curIndex) {
+ 		for (var i = 0; i < pic.length; ++i) {
+ 			pic[i].style.display = "none";
+ 			list[i].className = "";
+ 		}
+ 		pic[curIndex].style.display = "block";
+ 		list[curIndex].className = "on";
+ 	}
+
+ };                             
+ 
+ </script> 
 </head>
 
 <body>
@@ -28,7 +76,7 @@
 <button style=" width:100px;height:40px;background-color:#FFF; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">写博客</button>
 </div>
 <div class="biaotilan3">  
-    <img src="1.jpg" width="40" height="40" />
+   <p>姓名</p>
     
 </div>  
 <div class="biaotilan4">  
@@ -56,7 +104,22 @@
 </div>
 
 <div class="section">
-	<img src="1.jpg" />
+	<div class="wrap" id='wrap'>
+ <ul id="pic">
+ <li><img src="1.jpg" title="变形计"alt=""  style="width:800px"></li>
+ <li><img src="2.jpg" title="潮流时尚"alt=""></li>
+ <li><img src="3.jpg" title="王菲" alt=""></li>
+ <li><img src="1.jpg" title="蔡依林"alt=""></li>
+ <li><img src="2.jpg" title="蔡依林"alt=""></li>
+ </ul>
+ <ol id="list">
+ <li class="on">1</li>
+ <li>2</li>
+ <li>3</li>
+ <li>4</li>
+ <li>5</li>
+ </ol>
+ </div>
 	
 </div> 
 
