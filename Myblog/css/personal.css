@@ -1,0 +1,151 @@
+.biaotilan1{
+	position:absolute;
+	width:auto;
+	height:40px;
+	left:200px;
+	color:#666;
+	font-size:24px; 
+	font-weight:bolder;
+	/*border:1px solid #000;*/
+	text-align:center;
+}
+.biaotilan2{
+	width:100px;
+	height:40px;
+	position:absolute;
+	right:405px;
+	color:#666;
+	font-size:24px; 
+	font-weight:bolder;
+	/*border:1px solid #000;*/
+	text-align:center;
+}
+.biaotilan3{
+	width:100px;
+	height:40px;
+	position:absolute;
+	right:300px;
+	color:#666;
+	font-size:24px; 
+	font-weight:bolder;
+	/*border:1px solid #000;*/
+	text-align:left;
+}
+.biaotilan4{
+	width:80px;
+	height:40px;
+	position:absolute;
+	right:220px;
+	color:#666;
+	font-size:24px; 
+	font-weight:bolder;
+	/*border:1px solid #000;*/
+	text-align:center;
+}
+.graybox{
+	position:absolute;
+	left:0px;
+	right:0px;
+	top:60px;
+	height:40px;
+	background-color:#eee;
+}
+.graybox1{
+	position:absolute;
+	left:0px;
+	width:200px;
+	top:100px;
+	height:1200px;
+	background-color:#eee;
+	}
+.graybox2{
+	position:absolute;
+	right:0px;
+	width:200px;
+	top:100px;
+	height:1200px;
+	background-color:#eee;}
+.graybox3{
+	position:absolute;
+	right:0px;
+	left:0px;
+	top:1300px;
+	height:100px;
+	background-color:#eee;}
+.bigbox{
+	position:absolute;
+	right:200px;
+	left:200px;
+	border:1px solid #eee;
+	top:100px;
+	height:1200px;
+	}
+.nav {
+	position:absolute;
+	left:0px;
+	top:0px;
+    line-height:30px;
+    background-color:#fff;
+    width:110px;
+	height:1180px;
+    float:left;
+    padding-top:20px;
+	border-right:10px solid #eee;
+}
+.nav2{
+position:absolute;
+padding-left:140px;
+padding-top:20px;
+}
+.nav ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+}
+.nav ul a:link,a:visited
+{
+display:block;
+color:#999;
+background-color:#fff;
+width:100px;
+text-align:center;
+padding:4px;
+text-decoration:none;
+text-transform:uppercase;
+}
+.nav ul a:hover,a:active
+{
+background-color:#cc0000;
+}
+
+.section {
+	position:absolute;
+	left:120px;
+	top:20px;
+    width:700px;
+    float:left;
+	padding-left:20px; 
+}
+
+.news{
+	position:absolute;
+	left:815px;
+	height:1200px;
+	width:300px;
+	float:left;
+	border-left:10px solid #eee;
+	}
+	
+<!--¿É±à¼­ÏÂÀ­¿ò-->
+.iInput{
+position:absolute;
+width:50px;
+height:16px;
+left:140px;
+top:40px;
+border-bottom:0px;
+border-right:0px;
+border-left:0px;
+border-top:0px;
+}
