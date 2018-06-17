@@ -13,13 +13,35 @@
     My Blog 创作中心
 </div>
 <div class="biaotilan2">
-<button style=" width:100px;height:40px;background-color:#FFF; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">写博客</button>
-</div>
-<div class="biaotilan3">  
-    姓名
+	<br />
+   <a href='writeBlog.php?phone=
+   <?php
+   echo $_GET['phone'];
+   ?>
+   '>
+    <button style=" width:100px;height:40px;background-color:#eee; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">写博客
+</button>
+</a>
+</div>   
+<div class="biaotilan3" >  
+   <?php
+	include("conn.php");
+	$phone = $_GET['phone'];
+	$sql = mysql_query("SELECT name FROM register WHERE phone = $phone ");
+
+	while($row = mysql_fetch_array($sql))
+  	{
+  		echo  $row['name'];
+  		echo "<br />";
+  	}
+
+	mysql_close($conn);
+?>
 </div>  
 <div class="biaotilan4">  
-  <a href="zhuyeunlogin.php" style=" width:120px;height:40px;background-color:#FFF; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">|退出</a></div>  
+  <a href="index.php">
+  <button style=" width:120px;height:40px;background-color:#FFF; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">退出</button>
+</a></div>  
   
 <div class="graybox"> </div> 
 <div class="graybox1"> </div> 
@@ -61,7 +83,6 @@
 <div class="nav">
 <ul>
 <li><a href="Article-Management.php" target="_self">文章管理</a></li>
-<li><a href="Column-Management.php" target="_self">专栏管理</a></li>
 <li><a href="Review-Management.php" target="_self">评论管理</a></li>
 <li><a href="Classification-Management.php" target="_self">个人分类管理</a></li>
 </ul>

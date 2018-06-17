@@ -37,11 +37,18 @@ myFocus.set({
 </div>
 <div class="biaotilan2">
 	<br />
-   <a href="Article-Management.php">写博客</a>
+   <a href='writeBlog.php?phone=
+   <?php
+   echo $_GET['phone'];
+   ?>
+   '>
+    <button style=" width:100px;height:40px;background-color:#eee; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">写博客
+</button>
+</a>
 </div>   
 <   
-<div class="biaotilan3">  
-	<br />
+<div class="biaotilan3"  style="padding-top:18px;">  
+	
 
 <?php
 	include("conn.php");
@@ -59,9 +66,9 @@ myFocus.set({
 
 
 </div>    
-<div class="biaotilan4">  
-	<br />
-   <a href="zhuyeunlogin.php">退出登录</a>
+<div class="biaotilan4" style="padding-top:18px;">  
+	
+   <a href="index.php">退出登录</a>
 </div>  
 
 <div class="bigbox">

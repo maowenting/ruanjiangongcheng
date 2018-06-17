@@ -13,13 +13,15 @@
     My Blog 创作中心
 </div>
 <div class="biaotilan2">
+<a href="writeBlog.php">
 <button style=" width:100px;height:40px;background-color:#FFF; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">写博客</button>
+</a>
 </div>
 <div class="biaotilan3">  
     姓名
 </div>  
 <div class="biaotilan4">  
-  <a href="zhuyeunlogin.php" style=" width:120px;height:40px;background-color:#FFF; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">|退出</a></div>  
+  <a href="zhuyeunlogin.php" style=" width:120px;height:40px;background-color:#FFF; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">退出</a></div>  
   
 <div class="graybox"> </div> 
 <div class="graybox1"> </div> 
