@@ -6,6 +6,12 @@
  <?php
     $phone = $_POST['phone'];
 	$psw = $_POST['password'];
+	if($phone==""||$psw=="")
+	{
+		echo"<script>alert('不能为空');</script>";
+		header('Refresh:1,Url=login.php');
+		die;
+		}
 	include("conn.php");
 	$sql = mysql_query("SELECT * FROM login WHERE phone=$phone");
 	while($row = mysql_fetch_array($sql))
