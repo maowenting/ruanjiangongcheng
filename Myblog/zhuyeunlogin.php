@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>index-安全</title>
+<title>index</title>
 <link href="css/base.css" rel="stylesheet">
 <link href="css/index.css" rel="stylesheet">
 <link href="css/media.css" rel="stylesheet">
@@ -29,39 +29,40 @@ myFocus.set({
 </style>
 
 </head>
-
+	
 <body style="background-color:#eee">
 
 <div class="biaotilan1">
     My Blog 创作中心
 </div>
-<div class="biaotilan2">
-	<br />
-   <p>写博客</p>
-</div>    
+  
+<   
 <div class="biaotilan3">  
 	<br />
-   <p>姓名</p>
+
+
+
+
 </div>    
 <div class="biaotilan4">  
 	<br />
-   <p>退出登录</p>
+   <a href="login.php">登录</a>
 </div>  
 
 <div class="bigbox">
     <div class="nav">
     <ul>
-    <li><a href="zhuye.html" >推荐</a></li>
-    <li><a href="zuixinwenzhang.html">最新文章</a></li>                      
+    <li><a href="zhuye.php" style="background-color:#cc0000">推荐</a></li>
+    <li><a href="zuixinwenzhang.php">最新文章</a></li>                      
     <li><a href="zixun.html">资讯</a></li>
-    <li><a href="youxikaifa.html">游戏开发</a></li>
-    <li><a href="qianduan.html">前端</a></li>
-    <li><a href="yunwei.html">运维</a></li>
-    <li><a href="dashuju.html">大数据</a></li>
-    <li><a href="jisuanjijichu.html">计算机基础</a></li>
-    <li><a href="yinshipinkaifa.html">音视频开发</a></li>
-    <li><a href="anquan.html"style="background-color:#cc0000">安全</a></li>
-    <li><a href="qita.html">其他</a></li>
+    <li><a href="youxikaifa.php">游戏开发</a></li>
+    <li><a href="qianduan.php">前端</a></li>
+    <li><a href="yunwei.php">运维</a></li>
+    <li><a href="dashuju.php">大数据</a></li>
+    <li><a href="jisuanjijichu.php">计算机基础</a></li>
+    <li><a href="yinshipinkaifa.php">音视频开发</a></li>
+    <li><a href="anquan.php">安全</a></li>
+    <li><a href="qita.php">其他</a></li>
     </ul>
     </div>
     <div class="graybox"></div>
