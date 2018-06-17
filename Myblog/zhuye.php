@@ -46,10 +46,8 @@ myFocus.set({
 </button>
 </a>
 </div>   
-<   
-<div class="biaotilan3"  style="padding-top:18px;">  
-	
-
+ 
+<div class="biaotilan3"  style="padding-top:34px;">  	
 <?php
 	include("conn.php");
 	$phone = $_GET['phone'];
@@ -63,10 +61,9 @@ myFocus.set({
 
 	mysql_close($conn);
 ?>
-
-
-</div>    
-<div class="biaotilan4" style="padding-top:18px;">  
+</div>   
+ 
+<div class="biaotilan4" style="padding-top:34px;">  
 	
    <a href="index.php">退出登录</a>
 </div>  
@@ -74,17 +71,43 @@ myFocus.set({
 <div class="bigbox">
     <div class="nav">
     <ul>
-    <li><a href="zhuye.html" style="background-color:#cc0000">推荐</a></li>
-    <li><a href="zuixinwenzhang.html">最新文章</a></li>                      
-    <li><a href="zixun.html">资讯</a></li>
-    <li><a href="youxikaifa.html">游戏开发</a></li>
-    <li><a href="qianduan.html">前端</a></li>
-    <li><a href="yunwei.html">运维</a></li>
-    <li><a href="dashuju.html">大数据</a></li>
-    <li><a href="jisuanjijichu.html">计算机基础</a></li>
-    <li><a href="yinshipinkaifa.html">音视频开发</a></li>
-    <li><a href="anquan.html">安全</a></li>
-    <li><a href="qita.html">其他</a></li>
+    <li><a href='zhuye.php?phone=
+    <?php
+    echo $_GET['phone'];
+    ?>' 
+    style="background-color:#cc0000">推荐</a></li>
+    <li><a href='zuixinwenzhang.php?phone=
+    <?php
+    echo $_GET['phone'];
+    ?>'>最新文章</a></li>                      
+    <li><a href='zixun.php?phone=
+    <?php
+    echo $_GET['phone'];
+    ?>'>资讯</a></li>
+    <li><a href='youxikaifa.php?phone=
+    <?php
+    echo $_GET['phone'];
+    ?>'>游戏开发</a></li>
+    <li><a href='qianduan.php?phone=
+    <?php
+    echo $_GET['phone'];
+    ?>'>前端</a></li>
+    <li><a href='yunwei.php?phone=
+    <?php
+    echo $_GET['phone'];
+    ?>'>运维</a></li>
+    <li><a href='dashuju.php?phone=
+    <?php
+    echo $_GET['phone'];
+    ?>'>大数据</a></li>
+    <li><a href='jisuanjijichu.php?phone=
+    <?php
+    echo $_GET['phone'];
+    ?>'>计算机基础</a></li>
+    <li><a href='qita.php?phone=
+    <?php
+    echo $_GET['phone'];
+    ?>'>其他</a></li>
     </ul>
     </div>
     <div class="graybox"></div>
