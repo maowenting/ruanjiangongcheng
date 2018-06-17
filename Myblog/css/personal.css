@@ -97,6 +97,23 @@ position:absolute;
 padding-left:140px;
 padding-top:20px;
 }
+.nav3{
+	position:absolute;
+	left:0px;
+	top:0px;
+    line-height:30px;
+    background-color:#fff;
+    width:770px;
+	height:1180px;
+    float:left;
+    padding-top:20px;
+	border-right:10px solid #eee;
+}
+.nav4{
+position:absolute;
+padding-left:790px;
+padding-top:20px;
+}
 .nav ul
 {
 list-style-type:none;
