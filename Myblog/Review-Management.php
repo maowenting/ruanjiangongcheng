@@ -61,9 +61,24 @@
  
   <div class="nav">
 <ul>
-<li><a href="Article-Management.php" target="_self">文章管理</a></li>
-<li><a href="Review-Management.php" target="_self">评论管理</a></li>
-<li><a href="Classification-Management.php" target="_self">个人分类管理</a></li>
+<li><a href='Article-Management.php?phone=
+   <?php
+   echo $_GET['phone'];
+   ?>
+   '>文章管理</a></li>
+<li>
+	<a href='Review-Management.php?phone=
+   <?php
+   echo $_GET['phone'];
+   ?>
+   '>评论管理</a></li>
+<li>
+	<a href='Classification-Management.php?phone=
+   <?php
+   echo $_GET['phone'];
+   ?>
+   '>个人分类管理</a></li>
+
 </ul>
 </div>
 </div>
