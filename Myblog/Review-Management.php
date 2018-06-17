@@ -61,23 +61,11 @@
  
   <div class="nav">
 <ul>
-<li><a href='Article-Management.php?phone=
-   <?php
-   echo $_GET['phone'];
-   ?>
-   '>文章管理</a></li>
-<li>
-	<a href='Review-Management.php?phone=
-   <?php
-   echo $_GET['phone'];
-   ?>
-   '>评论管理</a></li>
-<li>
-	<a href='Classification-Management.php?phone=
-   <?php
-   echo $_GET['phone'];
-   ?>
-   '>个人分类管理</a></li>
+<li><a href='Article-Management.php'>文章管理</a></li>
+<li><a href='Review-Management.php'>评论管理</a></li>
+<li><a href='Classification-Management.php'>个人分类管理</a></li>
+</br>
+<li><a href='zhuye.php'>返回首页</a></li>
 
 </ul>
 </div>

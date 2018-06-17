@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>index</title>
+<title>index-资讯</title>
 <link href="css/base.css" rel="stylesheet">
 <link href="css/index.css" rel="stylesheet">
 <link href="css/media.css" rel="stylesheet">
@@ -43,9 +43,9 @@ myFocus.set({
 <div class="bigbox">
     <div class="nav">
     <ul>
-   <li><a href="index.php" style="background-color:#cc0000">推荐</a></li>
+   <li><a href="index.php" >推荐</a></li>
     <li><a href="2zuixinwenzhang.php">最新文章</a></li>                      
-    <li><a href="2zixun.php">资讯</a></li>
+    <li><a href="2zixun.php"style="background-color:#cc0000">资讯</a></li>
     <li><a href="2youxikaifa.php">游戏开发</a></li>
     <li><a href="2qianduan.php">前端</a></li>
     <li><a href="2yunwei.php">运维</a></li>

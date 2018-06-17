@@ -53,9 +53,7 @@
     <p>邮箱</p>  
     <textarea name="email"></textarea>
   	
-    <button type="submit" value="提交" >注册
-  
-    </button>
+    <button type="submit" value="提交" >注册</button>
     </form>
     <p><a href="login.php" >返回登录 </a><a href="zhuye.php" style="float:right; margin-right:25px;">返回首页 </a></p>
 

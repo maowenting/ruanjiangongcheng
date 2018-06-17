@@ -37,11 +37,7 @@ myFocus.set({
 </div>
 <div class="biaotilan2">
 	<br />
-   <a href='writeBlog.php?phone=
-   <?php
-   echo $_GET['phone'];
-   ?>
-   '>
+   <a href='writeBlog.php'>
     <button style=" width:100px;height:40px;background-color:#eee; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">写博客
 </button>
 </a>
@@ -50,7 +46,8 @@ myFocus.set({
 <div class="biaotilan3"  style="padding-top:34px;">  	
 <?php
 	include("conn.php");
-	$phone = $_GET['phone'];
+	session_start();
+   	$phone = $_SESSION['phone'];
 	$sql = mysql_query("SELECT name FROM register WHERE phone = $phone ");
 
 	while($row = mysql_fetch_array($sql))
@@ -71,42 +68,15 @@ myFocus.set({
 <div class="bigbox">
     <div class="nav">
     <ul>
-    <li><a href='zhuye.php?phone=
-    <?php
-    echo $_GET['phone'];
-    ?>' >推荐</a></li>
-    <li><a href='zuixinwenzhang.php?phone=
-    <?php
-    echo $_GET['phone'];
-    ?>'>最新文章</a></li>                      
-    <li><a href='zixun.php?phone=
-    <?php
-    echo $_GET['phone'];
-    ?>'>资讯</a></li>
-    <li><a href='youxikaifa.php?phone=
-    <?php
-    echo $_GET['phone'];
-    ?>'>游戏开发</a></li>
-    <li><a href='qianduan.php?phone=
-    <?php
-    echo $_GET['phone'];
-    ?>'>前端</a></li>
-    <li><a href='yunwei.php?phone=
-    <?php
-    echo $_GET['phone'];
-    ?>'>运维</a></li>
-    <li><a href='dashuju.php?phone=
-    <?php
-    echo $_GET['phone'];
-    ?>' style="background-color:#cc0000">大数据</a></li>
-    <li><a href='jisuanjijichu.php?phone=
-    <?php
-    echo $_GET['phone'];
-    ?>'>计算机基础</a></li>
-    <li><a href='qita.php?phone=
-    <?php
-    echo $_GET['phone'];
-    ?>'>其他</a></li>
+    <li><a href='zhuye.php' >推荐</a></li>
+    <li><a href='zuixinwenzhang.php'>最新文章</a></li>                      
+    <li><a href='zixun.php'>资讯</a></li>
+    <li><a href='youxikaifa.php'>游戏开发</a></li>
+    <li><a href='qianduan.php'>前端</a></li>
+    <li><a href='yunwei.php'>运维</a></li>
+    <li><a href='dashuju.php' style="background-color:#cc0000">大数据</a></li>
+    <li><a href='jisuanjijichu.php'>计算机基础</a></li>
+    <li><a href='qita.php'>其他</a></li>
     </ul>
     </div>
     <div class="graybox"></div>

@@ -5,7 +5,10 @@
 <title>个人分类管理</title>
 <!-- 引用样式 -->
 <link rel="stylesheet"  type="text/css" href="css/personal.css">
+<script>
 
+
+</script>
 </head>
 
 <body>
@@ -13,11 +16,7 @@
     My Blog 创作中心
 </div>
 <div class="biaotilan2">
-   <a href='writeBlog.php?phone=
-   <?php
-   echo $_GET['phone'];
-   ?>
-   '>
+   <a href='writeBlog.php'>
     <button style=" width:100px;height:40px;background-color:#fff; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">写博客
 </button>
 </a>
@@ -25,7 +24,8 @@
 <div class="biaotilan3" >  
    <?php
 	include("conn.php");
-	$phone = $_GET['phone'];
+	session_start();
+   	$phone = $_SESSION['phone'];
 	$sql = mysql_query("SELECT name FROM register WHERE phone = $phone ");
 
 	while($row = mysql_fetch_array($sql))
@@ -51,10 +51,13 @@
 <div class="nav2">
 <font color="#999">个人分类管理</font>
 </br></br>
-<input type="text" value="请输入新类别名" onfocus="javascript:if(this.value=='请输入新类别名')this.value='';" />
-&nbsp;&nbsp;
-<input type="button" value="添加类别">
-</br>
+<form action="Classification_submit.php" method="post">
+<input type="text"  name="typename" value="请输入新类别名" onfocus="javascript:if(this.value=='请输入新类别名')this.value='';" />
+&nbsp;&nbsp; 
+<input type="submit" value="添加类别"/>
+</form>
+
+</br></br>
 <font color="#999">排序&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类别</font>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -74,30 +77,38 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<font color="#999">操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文章数</font>
+<font color="#999">操作</font>
 </br>
 </br>
+ <?php
+	session_start();
+   	$phone = $_SESSION['phone'];
+	include("conn.php");
+	$sql = mysql_query("SELECT * FROM articletype WHERE phone = $phone");
+	$num = '1';
+	while($row = mysql_fetch_array($sql))
+  	{
+  		echo  $num++;
+		echo  "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+		echo  $row['TypeName'];
+		?>
+        <a  style=" float:right; color:#aaa; " href='deleteArticleType.php?typeid=<?php echo  $row['TypeID'];?>'> 
+        删除</a>
+        <?php
+  		echo  "</br>";
+  	}
+	mysql_close();
+	
+    ?>
 </div>  
   
 <div class="nav">
 <ul>
-<li><a href='Article-Management.php?phone=
-   <?php
-   echo $_GET['phone'];
-   ?>
-   '>文章管理</a></li>
-<li>
-	<a href='Review-Management.php?phone=
-   <?php
-   echo $_GET['phone'];
-   ?>
-   '>评论管理</a></li>
-<li>
-	<a href='Classification-Management.php?phone=
-   <?php
-   echo $_GET['phone'];
-   ?>
-   '>个人分类管理</a></li>
+<li><a href='Article-Management.php'>文章管理</a></li>
+<li><a href='Review-Management.php'>评论管理</a></li>
+<li><a href='Classification-Management.php'>个人分类管理</a></li>
+</br>
+<li><a href='zhuye.php'>返回首页</a></li>
 </ul>
 </div>
   

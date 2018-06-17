@@ -4,6 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head> 
  <?php
+ 	session_start();
+   	$_SESSION['phone']= $_POST['phone'];
     $phone = $_POST['phone'];
 	$psw = $_POST['password'];
 	if($phone==""||$psw=="")

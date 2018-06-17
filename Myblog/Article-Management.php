@@ -14,11 +14,7 @@
 </div>
 <div class="biaotilan2">
 
-   <a href='writeBlog.php?phone=
-   <?php
-   echo $_GET['phone'];
-   ?>
-   '>
+   <a href='writeBlog.php'>
     <button style=" width:100px;height:40px;background-color:#fff; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">写博客
 </button>
 </a>
@@ -26,7 +22,8 @@
 <div class="biaotilan3" >  
    <?php
 	include("conn.php");
-	$phone = $_GET['phone'];
+	session_start();
+   	$phone = $_SESSION['phone'];
 	$sql = mysql_query("SELECT name FROM register WHERE phone = $phone ");
 
 	while($row = mysql_fetch_array($sql))
@@ -101,23 +98,11 @@
 
  <div class="nav">
 <ul>
-<li><a href='Article-Management.php?phone=
-   <?php
-   echo $_GET['phone'];
-   ?>
-   '>文章管理</a></li>
-<li>
-	<a href='Review-Management.php?phone=
-   <?php
-   echo $_GET['phone'];
-   ?>
-   '>评论管理</a></li>
-<li>
-	<a href='Classification-Management.php?phone=
-   <?php
-   echo $_GET['phone'];
-   ?>
-   '>个人分类管理</a></li>
+<li><a href='Article-Management.php'>文章管理</a></li>
+<li><a href='Review-Management.php'>评论管理</a></li>
+<li><a href='Classification-Management.php'>个人分类管理</a></li>
+</br>
+<li><a href='zhuye.php'>返回首页</a></li>
 </ul>
 </div>
 </div> 
