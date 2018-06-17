@@ -13,13 +13,13 @@
     My Blog 创作中心
 </div>
 <div class="biaotilan2">
-	<br />
+
    <a href='writeBlog.php?phone=
    <?php
    echo $_GET['phone'];
    ?>
    '>
-    <button style=" width:100px;height:40px;background-color:#eee; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">写博客
+    <button style=" width:100px;height:40px;background-color:#fff; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">写博客
 </button>
 </a>
 </div>   
