@@ -12,9 +12,10 @@
 	$PersonalType = $_POST['personaltype'];
 	$EssayType = $_POST['essaytype'];
 	$BlogType = $_POST['blogtype'];
-	$sql = mysql_query("INSERT INTO article (title,content,PersonalType,EssayType,BlogType,phone) values 	('$title','$content','$PersonalType','$EssayType','$BlogType','$phone')");
+	$DataTime = date('y-m-d h:i:s',time());
+	$sql = mysql_query("INSERT INTO article (title,content,PersonalType,EssayType,BlogType,phone,DataTime) values 	('$title','$content','$PersonalType','$EssayType','$BlogType','$phone','$DataTime')");
 	mysql_close($conn);
-	header('Url=Article-Management.php');
+	header('location:Article-Management.php');
 	die;
 ?>
 

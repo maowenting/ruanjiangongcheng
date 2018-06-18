@@ -97,6 +97,7 @@ color:#777; background-color:#fff; font-size:20px; border:1px solid #eee" >
     <option value="其他">其他</option>
 </select>
 <br/><br/>
+<input type="hidden" name="DataTime" value="时间" />
 <button type="submit" value="提交">发布微博
 </button>
 </form>

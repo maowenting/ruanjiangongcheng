@@ -93,6 +93,35 @@
 <input type="text" value="仅支持标题关键词搜索" onfocus="javascript:if(this.value=='仅支持标题关键词搜索')this.value='';" />
 &nbsp;&nbsp;
 <input type="button" value="搜  索">
+<br />
+	<label style="display:inline-block; width:100px;  margin-top:15px; color:#777">标题&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <label style="display:inline-block; width:300px;  margin-top:15px; color:#777">内容&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <label style="display:inline-block; width:100px;  margin-top:15px; color:#777">个人分类&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <label style="display:inline-block; width:100px;  margin-top:15px; color:#777">文章类型&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <label style="display:inline-block; width:100px;  margin-top:15px; color:#777">博客分类&nbsp;&nbsp;&nbsp;&nbsp;</label>
+	<label style="display:inline-block; width:200px;  margin-top:15px; color:#777">时间&nbsp;&nbsp;&nbsp;&nbsp;</label>
+<?php
+	include("conn.php");
+	session_start();
+   	$phone = $_SESSION['phone'];
+	$sql = mysql_query("SELECT * FROM article WHERE phone = $phone ");
+
+	while($row = mysql_fetch_array($sql))
+  	{	echo "<br />";
+	?>
+    <a style="display:inline-block; width:100px;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <label style="display:inline-block; width:300px; margin-top:5px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+	<label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>	
+  	<?php	
+  	}
+
+	mysql_close($conn);
+?>
+
+
 </div>
 
 
