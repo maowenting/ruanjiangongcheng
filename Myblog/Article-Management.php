@@ -96,7 +96,7 @@
 </div>
 
 
- <div class="nav">
+<div class="nav">
 <ul>
 <li><a href='Article-Management.php'>文章管理</a></li>
 <li><a href='Review-Management.php'>评论管理</a></li>

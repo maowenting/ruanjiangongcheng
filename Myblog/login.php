@@ -52,7 +52,7 @@
     </form>
     <br />
     <p>还没有账号？ <a href="register.php">立即注册</a> </p>
-    <p><a href="zhuye.php" >返回首页 </a></p>
+    <p><a href="index.php" >返回首页 </a></p>
 </div> 
 </body>
 </html>

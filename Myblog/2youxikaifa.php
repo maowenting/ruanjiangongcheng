@@ -62,11 +62,11 @@ myFocus.set({
             <!--载入画面(可删除)-->
             <div class="pic"><!--图片列表-->
               <ul>
-                <li><a href="#1"><img src="img/1.jpg" thumb=""/></a></li>
-                <li><a href="#2"><img src="img/2.jpg" thumb=""/></a></li>
-                <li><a href="#3"><img src="img/3.jpg" thumb=""/></a></li>
-                <li><a href="#4"><img src="img/4.jpg" thumb=""/></a></li>
-                <li><a href="#5"><img src="img/5.jpg" thumb=""/></a></li>
+                <li><a href="#1"><img src="img/16.png" thumb=""/></a></li>
+                <li><a href="#2"><img src="img/17.png" thumb=""/></a></li>
+                <li><a href="#3"><img src="img/18.png" thumb=""/></a></li>
+                <li><a href="#4"><img src="img/19.png" thumb=""/></a></li>
+                <li><a href="#5"><img src="img/20.png" thumb=""/></a></li>
               </ul>
             </div>
           </div>

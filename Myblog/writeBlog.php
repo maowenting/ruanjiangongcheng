@@ -46,42 +46,60 @@
 <div class="graybox3"> </div>  
 <div class="bigbox">  
  <div class="nav2">
- 
-<textarea style=" width:860px; height:30px; line-height:30px; resize:none; 
+<form action="writeBlog_submit.php" method="post">
+<textarea name="title" placeholder="输入文章标题" style=" width:860px; height:30px; line-height:30px; resize:none; 
 color:#777; background-color:#eee; font-size:20px; border:none">
-输入文章标题
 </textarea>
 <br/><br/>
-<textarea style=" width:860px; height:800px; resize:none; 
-color:#777; background-color:#fff; font-size:20px; border:1px solid #eee">
-输入文章内容
+<textarea name="content" placeholder="输入文章内容" style=" width:860px; height:800px; resize:none; 
+color:#777; background-color:#fff; font-size:20px; border:1px solid #eee" >
 </textarea>
-<br/><br/>
-<label>个人分类：
 
+<br/><br/>
+<label>个人分类&nbsp;&nbsp;
+<select id="selPersonalType" name="personaltype" style="width:200px; height:30px;">
+     <option value="未选择">请选择</option>
+	 <?php
+	include("conn.php");
+	session_start();
+   	$phone = $_SESSION['phone'];
+	$sql = mysql_query("SELECT TypeName FROM articletype WHERE phone = $phone ");
+
+	while($row = mysql_fetch_array($sql))
+  	{?>
+    <option value="<?php echo  $row['TypeName'];?>"><?php echo  $row['TypeName'];?></option>
+    <?php
+  	}
+
+	mysql_close($conn);
+?>
+</select>
 </label>
 
 <br/><br/>
 <label>文章类型</label>&nbsp;&nbsp;
-<select id="selType" style="width:200px; height:30px;">
-     <option value="0">请选择</option>
-     <option value="1">原创</option>
-     <option value="2">转载</option>
-     <option value="3">翻译</option>
+<select id="selType" name="essaytype" style="width:200px; height:30px;">
+     <option value="未选择">请选择</option>
+     <option value="原创">原创</option>
+     <option value="转载">转载</option>
+     <option value="翻译">翻译</option>
 </select>
 <label>博客分类</label>&nbsp;&nbsp;
-<select class="droBlogType" id="radChl" name="radChl" style="width:200px;height:30px;">
-	<option value="0">选择分类</option>                                 
-	<option value="1">大数据</option>
-	<option value="2">游戏开发</option>
-	<option value="3">运维</option>
-	<option value="4">前端</option>
-    <option value="5">后端</option>
-    <option value="6">安全</option>
-    <option value="7">计算机理论与基础</option>
+<select class="droBlogType" id="radChl" name="blogtype" style="width:200px;height:30px;">
+	<option value="未选择">选择分类</option>                                 
+	<option value="大数据">大数据</option>
+	<option value="游戏开发">游戏开发</option>
+	<option value="运维">运维</option>
+	<option value="前端">前端</option>
+    <option value="后端">后端</option>
+    <option value="安全">安全</option>
+    <option value="计算机理论与基础">计算机理论与基础</option>
+    <option value="其他">其他</option>
 </select>
 <br/><br/>
-<button>发布微博</button>&nbsp;&nbsp;<button>返回</button>
+<button type="submit" value="提交">发布微博
+</button>
+</form>
  </div>
  
 <div class="nav">

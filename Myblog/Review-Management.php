@@ -13,11 +13,7 @@
     My Blog 创作中心
 </div>
 <div class="biaotilan2">
-   <a href='writeBlog.php?phone=
-   <?php
-   echo $_GET['phone'];
-   ?>
-   '>
+   <a href='writeBlog.php '>
     <button style=" width:100px;height:40px;background-color:#fff; font-size:20px; color:#666; font-weight:bolder; border:none; outline:none">写博客
 </button>
 </a>
@@ -25,7 +21,8 @@
 <div class="biaotilan3" >  
    <?php
 	include("conn.php");
-	$phone = $_GET['phone'];
+	session_start();
+   	$phone = $_SESSION['phone'];
 	$sql = mysql_query("SELECT name FROM register WHERE phone = $phone ");
 
 	while($row = mysql_fetch_array($sql))
