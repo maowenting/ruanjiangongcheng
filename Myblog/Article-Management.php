@@ -115,7 +115,7 @@
 	while($row = mysql_fetch_array($sql))
   	{	echo "<br />";
 	?>
-    <a href="FullArticle.php" style="display:inline-block; width:100px;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <a href="FullArticle.php?Id=<?php echo $row['Id'];?>" style="display:inline-block; width:100px;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a>
     <label style="display:inline-block; width:300px; margin-top:5px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label>
     <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
     <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
