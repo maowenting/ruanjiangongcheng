@@ -46,58 +46,63 @@
 <div class="graybox3"> </div>  
 <div class="bigbox">  
  <div class="nav2">
-<<<<<<< HEAD
-=======
-<form action="writeBlog_submit.php" method="post">
->>>>>>> bb5009786f0f872507a75e488c97f9958aedf979
 <textarea name="title" style=" width:860px; height:30px; line-height:30px; resize:none; 
 color:#777; background-color:#eee; font-size:20px; border:none">
 <?php
 	include("conn.php");
 	$articleID = $_GET['Id'];
 	$sql = mysql_query("SELECT * FROM article WHERE Id = $articleID  ");
-	echo $row['Id'];
-	echo '</br></br>'
-	echo $row['content'];
-	echo '</br></br>'
-	echo '<label>个人分类：</label><label>'
-	echo $row['PersonalType'];
-	echo ' </label><br/><br/><label>文章类型：</label><label>'
-	echo $row['EssayType'];
-	echo ' </label></br></br><label>博客分类：</label><label>'
-	echo $row['BlogType'];
-	echo '</label></br></br><label>发布时间：</label><label>'
-	echo $row['DataTime'];
-	echo '</label><br/><br/>'
+	while($row = mysql_fetch_array($sql))
+	{
+	echo $row['title'];
+	}
 	mysql_close($conn);
 ?>
 </textarea>
-<!--<br/><br/>
-<textarea name="content"  style=" width:860px; height:200px; resize:none; 
+<br/><br/>
+<textarea name="content"  style=" width:860px; height:500px; resize:none; 
 color:#777; background-color:#fff; font-size:20px; border:1px solid #eee" >
 <?php
-	//include("conn.php");
-	//$articleID = $_GET['Id'];
-	//$sql = mysql_query("SELECT * FROM article WHERE Id = $articleID  ");
-	//echo $row['content'];
-	//mysql_close($conn);
+	include("conn.php");
+	$articleID = $_GET['Id'];
+	$sql = mysql_query("SELECT * FROM article WHERE Id = $articleID  ");
+	while($row = mysql_fetch_array($sql))
+	{
+	echo $row['content'];
+	}
+	mysql_close($conn);
+	
 ?>
-</textarea>-->
-<!--
+</textarea>
+
 <br/><br/>
-<label>个人分类：</label><label> xxx类 </label>
-<br/><br/>
-<label>文章类型：</label><label> xxx类型 </label></br></br>
-<label>博客分类：</label><label> xxx类型 </label></br></br>
-<label>发布时间：</label><label> xx年xx月xx日 </label>
-<br/><br/>-->
+<label style="color:#999"><?php
+	include("conn.php");
+	$articleID = $_GET['Id'];
+	$sql = mysql_query("SELECT * FROM article WHERE Id = $articleID  ");
+	while($row = mysql_fetch_array($sql))
+	{
+		echo '个人分类：';
+		echo $row['PersonalType'];
+		echo '<br/><br/>';
+		echo '文章类型：';
+		echo $row['EssayType'];
+		echo '<br/><br/>';
+		echo '博客分类：';
+		echo $row['BlogType'];
+		echo '<br/><br/>';
+		echo '发布时间：';
+		echo $row['DataTime'];
+		echo '<br/><br/>';
+		
+	}
+	mysql_close($conn);
+	
+?></label>
+
 <a href="Article-Management.php">
 <button value="返回">返回</button>
 </a>
-<<<<<<< HEAD
-=======
-</form>
->>>>>>> bb5009786f0f872507a75e488c97f9958aedf979
  </div>
  
 <div class="nav">

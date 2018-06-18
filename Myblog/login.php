@@ -45,7 +45,7 @@
 	<p>账号</p>  
     <textarea name="phone"></textarea>
     <p>密码</p>  
-    <textarea name="password"></textarea>
+   <input type="password" name="password" style="width:465px; height:30px; margin-left:20px; font-size:24px" />
     <button type="submit" value="提交">登录
     
     </button>

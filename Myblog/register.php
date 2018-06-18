@@ -45,9 +45,11 @@
     <p>姓名</p>  
     <textarea name="name"></textarea>
     <p>密码</p>  
-    <textarea name="password"></textarea>
+    <input type="password" name="password" style="width:90%; height:26px; margin-left:20px; font-size:24px" />
+
     <p>再次输入密码</p>  
-    <textarea name="password2"></textarea>
+    <input type="password" name="password2" style="width:90%; height:26px; margin-left:20px; font-size:24px" />
+
     <p>性别</p>  
     <textarea name="sex"></textarea>
     <p>邮箱</p>  
