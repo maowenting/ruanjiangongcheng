@@ -46,7 +46,7 @@
 <div class="graybox3"> </div>  
 <div class="bigbox">  
  <div class="nav2">
-<textarea name="title" style=" width:860px; height:30px; line-height:30px; resize:none; 
+<div name="title" contenteditable="false" style=" width:860px; height:30px; line-height:30px; resize:none; 
 color:#777; background-color:#eee; font-size:20px; border:none">
 <?php
 	include("conn.php");
@@ -58,9 +58,9 @@ color:#777; background-color:#eee; font-size:20px; border:none">
 	}
 	mysql_close($conn);
 ?>
-</textarea>
+</div>
 <br/><br/>
-<textarea name="content"  style=" width:860px; height:500px; resize:none; 
+<div name="content" contenteditable="false" style=" width:860px; height:500px; resize:none; 
 color:#777; background-color:#fff; font-size:20px; border:1px solid #eee" >
 <?php
 	include("conn.php");
@@ -73,7 +73,7 @@ color:#777; background-color:#fff; font-size:20px; border:1px solid #eee" >
 	mysql_close($conn);
 	
 ?>
-</textarea>
+</div>
 
 <br/><br/>
 <label style="color:#999"><?php
