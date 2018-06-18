@@ -51,24 +51,19 @@
 
 <font color="#999">文章管理</font>
 </br></br>
-<input type="button" value="全  部">
-<input type="button" value="已发表">
-<input type="button" value="私  密">
-<input type="button" value="草稿箱">
-<input type="button" value="回收站">
-</br></br>
+<form action="Acticle-Management_submit.php" method="post">
 <font color="#999">发布时间：</font>
-<select>
+<select name="Year">
 	<option value="不限">不限</option>
-	<option value="2017">2018</option>
+	<option value="2018">2018</option>
 	<option value="2017">2017</option>
-	<option value="2017">2016</option>
-	<option value="2017">2015</option>
-	<option value="2017">2014</option>
+	<option value="2016">2016</option>
+	<option value="2015">2015</option>
+	<option value="2014">2014</option>
 	<!--<input class="iInput" />-->
 </select>
 <font color="#999">年</font>
-<select>
+<select name="Month">
 	<option value="不限">不限</option>
 	<option value="01">01</option>
 	<option value="02">02</option>
@@ -85,21 +80,32 @@
 	<!--<input class="iInput" />-->
 </select>
 <font color="#999">月</font>
-&nbsp;&nbsp;
-<select>
-	<option value="选择个人分类">选择个人分类</option>
+&nbsp;&nbsp;<font color="#999">个人分类</font>
+<select name="PersonalType">
+    <option value="未选择">请选择</option>
+	 <?php
+	include("conn.php");
+	session_start();
+   	$phone = $_SESSION['phone'];
+	$sql = mysql_query("SELECT TypeName FROM articletype WHERE phone = $phone ");
+
+	while($row = mysql_fetch_array($sql))
+  	{?>
+    <option value="<?php echo  $row['TypeName'];?>"><?php echo  $row['TypeName'];?></option>
+    <?php
+  	}
+	mysql_close($conn);
+?>
 </select>
-&nbsp;&nbsp;
-<input type="text" value="仅支持标题关键词搜索" onfocus="javascript:if(this.value=='仅支持标题关键词搜索')this.value='';" />
-&nbsp;&nbsp;
-<input type="button" value="搜  索">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" value="搜  索">
 <br />
-	<label style="display:inline-block; width:100px;  margin-top:15px; color:#777">标题&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:300px;  margin-top:15px; color:#777">内容&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px;  margin-top:15px; color:#777">个人分类&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px;  margin-top:15px; color:#777">文章类型&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px;  margin-top:15px; color:#777">博客分类&nbsp;&nbsp;&nbsp;&nbsp;</label>
-	<label style="display:inline-block; width:200px;  margin-top:15px; color:#777">时间&nbsp;&nbsp;&nbsp;&nbsp;</label>
+	<label style="display:inline-block; width:100px; margin-bottom:10px;  margin-top:15px; color:#777">标题&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <label style="display:inline-block; width:300px; margin-bottom:10px; margin-top:15px; color:#777">内容&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">个人分类&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">文章类型&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">博客分类&nbsp;&nbsp;&nbsp;&nbsp;</label>
+	<label style="display:inline-block; width:200px; margin-bottom:10px; margin-top:15px; color:#777">时间&nbsp;&nbsp;&nbsp;&nbsp;</label>
 <?php
 	include("conn.php");
 	session_start();
@@ -109,7 +115,7 @@
 	while($row = mysql_fetch_array($sql))
   	{	echo "<br />";
 	?>
-    <a style="display:inline-block; width:100px;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <a href="FullArticle.php" style="display:inline-block; width:100px;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a>
     <label style="display:inline-block; width:300px; margin-top:5px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label>
     <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
     <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>

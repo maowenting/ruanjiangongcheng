@@ -46,7 +46,10 @@
 <div class="graybox3"> </div>  
 <div class="bigbox">  
  <div class="nav2">
+<<<<<<< HEAD
+=======
 <form action="writeBlog_submit.php" method="post">
+>>>>>>> bb5009786f0f872507a75e488c97f9958aedf979
 <textarea name="title" style=" width:860px; height:30px; line-height:30px; resize:none; 
 color:#777; background-color:#eee; font-size:20px; border:none">
 <?php
@@ -91,7 +94,10 @@ color:#777; background-color:#fff; font-size:20px; border:1px solid #eee" >
 <a href="Article-Management.php">
 <button value="返回">返回</button>
 </a>
+<<<<<<< HEAD
+=======
 </form>
+>>>>>>> bb5009786f0f872507a75e488c97f9958aedf979
  </div>
  
 <div class="nav">

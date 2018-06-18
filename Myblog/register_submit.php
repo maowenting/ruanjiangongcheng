@@ -12,12 +12,12 @@
 	$email = $_POST['email'];
 	if($phone==""||$email==""||$name==""||$psw==""||$sex==""||$psw2==""){
 		echo"<script>alert('输入不得为空！');</script>";
-		header('Refresh:1,Url=register.php');
+		header('location:register.php');
 	die;
 	}
 	else if($psw!=$psw2){
 		echo"<script>alert('两次密码输入不一致！');</script>";
-		header('Refresh:1,Url=register.php');
+		header('location:register.php');
 	die;
 	}
 	else{
@@ -27,7 +27,7 @@
 	include("conn.php");
 	$sql2 = mysql_query("INSERT INTO login (phone,password) values ('$phone','$psw')");
 	mysql_close();
-	header('Refresh:1,Url=login.php');
+	header('location:login.php');
 	die;
 	}
     ?>
