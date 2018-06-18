@@ -60,7 +60,7 @@ color:#777; background-color:#eee; font-size:20px; border:none">
 ?>
 </div>
 <br/><br/>
-<div name="content" contenteditable="false" style=" width:860px; height:500px; resize:none; 
+<div name="content" contenteditable="false" style=" width:860px; height:300px; resize:none; 
 color:#777; background-color:#fff; font-size:20px; border:1px solid #eee" >
 <?php
 	include("conn.php");
@@ -76,33 +76,41 @@ color:#777; background-color:#fff; font-size:20px; border:1px solid #eee" >
 </div>
 
 <br/><br/>
-<label style="color:#999"><?php
+<label style="color:#999">
+</label>
+
+<form action="AddComment.php" method="post">
+<input type="hidden" name="ArticleID" value="<?php echo $_GET['Id']; ?>" />
+<input type="text"  name="comment" style="resize:none;margin-top:15px; width:60%; height:24px;"></textarea>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" value="评论" style=" width:60px;height:28px;" ></input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="Article-Management.php">
+<button value="返回" style=" width:60px;height:28px;">返回</button>
+</a>
+</form>
+
+ <label style="display:inline-block; width:550px; margin-bottom:10px; margin-top:15px; color:#777">评论</label>
+ <label style="display:inline-block; width:120px; margin-bottom:10px; margin-top:15px; color:#777">评论者账号</label>
+ <label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">评论时间</label>
+<?php 
 	include("conn.php");
 	$articleID = $_GET['Id'];
-	$sql = mysql_query("SELECT * FROM article WHERE Id = $articleID  ");
+	session_start();
+   	$phone = $_SESSION['phone'];
+	$sql = mysql_query("SELECT * FROM comment WHERE ArticleID = $articleID");
 	while($row = mysql_fetch_array($sql))
-	{
-		echo '个人分类：';
-		echo $row['PersonalType'];
-		echo '<br/><br/>';
-		echo '文章类型：';
-		echo $row['EssayType'];
-		echo '<br/><br/>';
-		echo '博客分类：';
-		echo $row['BlogType'];
-		echo '<br/><br/>';
-		echo '发布时间：';
-		echo $row['DataTime'];
-		echo '<br/><br/>';
+	{	echo "<br />";
+	?>
+    <label style="display:inline-block; width:550px; margin-bottom:10px; margin-top:15px; color:#777"><?php echo $row['CommentContent']; ?></label>
+ 	<label style="display:inline-block; width:120px; margin-bottom:10px; margin-top:15px; color:#777"><?php echo $row['phone']; ?></label>
+ 	<label style="display:inline-block; width:200px; margin-bottom:10px; margin-top:15px; color:#777"><?php echo $row['DataTime']; ?></label>
+		
+		
+	<?php	
 		
 	}
 	mysql_close($conn);
-	
-?></label>
+?>
 
-<a href="Article-Management.php">
-<button value="返回">返回</button>
-</a>
  </div>
  
 <div class="nav">
