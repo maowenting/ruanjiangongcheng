@@ -109,6 +109,7 @@
 <li><a href='Classification-Management.php'>个人分类管理</a></li>
 </br>
 <li><a href='zhuye.php'>返回首页</a></li>
+<li><a href='ChangePWD.php'>修改密码</a></li>
 </ul>
 </div>
   
