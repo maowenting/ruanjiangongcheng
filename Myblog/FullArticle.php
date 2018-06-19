@@ -81,6 +81,7 @@ color:#777; background-color:#fff; font-size:20px; border:1px solid #eee" >
 
 <form action="AddComment.php" method="post">
 <input type="hidden" name="ArticleID" value="<?php echo $_GET['Id']; ?>" />
+<input type="hidden" name="DataTime" value="时间" />
 <input type="text"  name="comment" style="resize:none;margin-top:15px; width:60%; height:24px;"></textarea>&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="submit" value="评论" style=" width:60px;height:28px;" ></input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="Article-Management.php">

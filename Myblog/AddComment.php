@@ -5,12 +5,12 @@
 </head> 
 <?php
 	include("conn.php");
-	$comment = $_POST['comment'];
-	$articleID = $_POST['ArticleID'];
 	session_start();
    	$phone = $_SESSION['phone'];
-	$DataTime = date('y-m-d h:i:s',time());
-	$sql = mysql_query("INSERT INTO comment (ArticleID,CommentContent,phone,DataTime) values ('$articleID','$comment','$phone','DataTime')");
+	$Time = date('y-m-d h:i:s',time());
+	$comment = $_POST['comment'];
+	$articleID = $_POST['ArticleID'];
+	$sql = mysql_query("INSERT INTO comment (ArticleID,CommentContent,phone,DataTime) values ('$articleID','$comment','$phone','$Time')");
 	mysql_close($conn);
 
 	header('location:FullArticle.php?Id='.$articleID);
