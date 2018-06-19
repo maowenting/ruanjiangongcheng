@@ -11,7 +11,7 @@
 	if($phone==""||$psw=="")
 	{
 		echo"<script>alert('不能为空');</script>";
-		header('Refresh:1,Url=login.php');
+		header('location:login.php');
 		die;
 		}
 	include("conn.php");
@@ -24,7 +24,7 @@
 	if($password!=$psw)
 	{
 		echo"<script>alert('密码错误');</script>";
-		header('Refresh:1,Url=login.php');
+		header('location:login.php');
 		die;
 		}
 	else{
