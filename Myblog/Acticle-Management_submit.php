@@ -106,13 +106,17 @@
 &nbsp;&nbsp;&nbsp;&nbsp;
 <input type="submit" value="搜  索">
 <br />
-	<label style="display:inline-block; width:100px; margin-bottom:10px;  margin-top:15px; color:#777">标题&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:300px; margin-bottom:10px; margin-top:15px; color:#777">内容&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">个人分类&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">文章类型&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">博客分类&nbsp;&nbsp;&nbsp;&nbsp;</label>
-	<label style="display:inline-block; width:200px; margin-bottom:10px; margin-top:15px; color:#777">时间&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    
+	
+<table>
+<tr>
+<td><label style="display:inline-block; width:100px; margin-bottom:10px;  margin-top:15px; color:#777">标题&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+<td><label style="display:inline-block; width:300px; margin-bottom:10px; margin-top:15px; color:#777">内容&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+<td><label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">个人分类&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+<td><label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">文章类型&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+<td><label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">博客分类&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+<td><label style="display:inline-block; width:200px; margin-bottom:10px; margin-top:15px; color:#777">时间&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+</tr>
+</table>    
     
     
 
@@ -133,80 +137,108 @@
 		$personaltype=$row['PersonalType'];
   		
 		if($y==$Year&&$m==$Month&&$personaltype==$PersonalType)
-		{	echo "<br />";
+		{	
 	?>
-    <a style="display:inline-block; width:100px;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-    <label style="display:inline-block; width:300px; margin-top:5px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-	<label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>	
+	<table>
+	<tr>
+    <td><a href="FullArticle.php?Id=<?php echo $row['Id'];?>" style="display:inline-block; width:80px; overflow:hidden; white-space:nowrap;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+    <td><label style="display:inline-block; width:300px; margin-top:5px; margin-left:20px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+	<td><label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+	</tr>
+	</table>		
   	<?php	
 		}
 		else if($y==$Year&&$m==$Month&&$PersonalType=="未选择")
-		{	echo "<br />";
+		{	
 	?>
-    <a style="display:inline-block; width:100px;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-    <label style="display:inline-block; width:300px; margin-top:5px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-	<label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>	
+	<table>
+	<tr>
+    <td><a  href="FullArticle.php?Id=<?php echo $row['Id'];?>"  style="display:inline-block; width:80px; overflow:hidden; white-space:nowrap;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+    <td><label style="display:inline-block; width:300px; margin-top:5px;margin-left:20px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+	<td><label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+	</tr>
+	</table>			
   	<?php	
 		}
 		else if($y==$Year&&$Month=="不限"&&$PersonalType==$personaltype)
-		{	echo "<br />";
+		{	
 	?>
-    <a style="display:inline-block; width:100px;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-    <label style="display:inline-block; width:300px; margin-top:5px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-	<label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>	
+	<table>
+	<tr>
+    <td><a  href="FullArticle.php?Id=<?php echo $row['Id'];?>"  style="display:inline-block; width:80px; overflow:hidden; white-space:nowrap;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+    <td><label style="display:inline-block; width:300px; margin-top:5px;margin-left:20px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+	<td><label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+	</tr>
+	</table>
   	<?php	
 		}
 		else if($Year=="不限"&&$m==$Month&&$PersonalType==$personaltype)
-		{	echo "<br />";
+		{	
 	?>
-    <a style="display:inline-block; width:100px;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-    <label style="display:inline-block; width:300px; margin-top:5px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-	<label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>	
+	<table>
+	<tr>
+    <td><a  href="FullArticle.php?Id=<?php echo $row['Id'];?>"  style="display:inline-block; width:80px; overflow:hidden; white-space:nowrap;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+    <td><label style="display:inline-block; width:300px; margin-top:5px;margin-left:20px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+	<td><label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+	</tr>
+	</table>
   	<?php	
 		}
 		else if($Year=="不限"&&$Month=="不限"&&$PersonalType==$personaltype)
-		{	echo "<br />";
+		{	
 	?>
-    <a style="display:inline-block; width:100px;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-    <label style="display:inline-block; width:300px; margin-top:5px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-	<label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>	
+	<table>
+	<tr>
+    <td><a  href="FullArticle.php?Id=<?php echo $row['Id'];?>"  style="display:inline-block; width:80px; overflow:hidden; white-space:nowrap;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+    <td><label style="display:inline-block; width:300px; margin-top:5px;margin-left:20px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+	<td><label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+	</tr>
+	</table>
   	<?php	
 		}
 		else if($y==$Year&&$Month=="不限"&&$PersonalType=="未选择")
-		{	echo "<br />";
+		{	
 	?>
-    <a style="display:inline-block; width:100px;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-    <label style="display:inline-block; width:300px; margin-top:5px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-	<label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>	
+	<table>
+	<tr>
+    <td><a  href="FullArticle.php?Id=<?php echo $row['Id'];?>"  style="display:inline-block; width:80px; overflow:hidden; white-space:nowrap;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+    <td><label style="display:inline-block; width:300px; margin-top:5px;margin-left:20px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+	<td><label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+	</tr>
+	</table>	
   	<?php	
 		}
 		else if($Year=="不限"&&$m==$Month&&$PersonalType=="未选择")
-		{	echo "<br />";
+		{	
 	?>
-    <a style="display:inline-block; width:100px;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-    <label style="display:inline-block; width:300px; margin-top:5px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-	<label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>	
+	<table>
+	<tr>
+    <td><a  href="FullArticle.php?Id=<?php echo $row['Id'];?>" style="display:inline-block; width:80px; overflow:hidden; white-space:nowrap;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+    <td><label style="display:inline-block; width:300px; margin-top:5px;margin-left:20px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+	<td><label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label></td>	
+	</tr>
+	</table>
   	<?php	
 		}
 		
@@ -226,6 +258,7 @@
 <li><a href='Classification-Management.php'>个人分类管理</a></li>
 </br>
 <li><a href='zhuye.php'>返回首页</a></li>
+<li><a href='ChangePWD.php'>修改密码</a></li>
 </ul>
 </div>
 </div> 

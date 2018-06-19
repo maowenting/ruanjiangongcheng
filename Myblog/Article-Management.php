@@ -100,12 +100,18 @@
 &nbsp;&nbsp;&nbsp;&nbsp;
 <input type="submit" value="搜  索">
 <br />
-	<label style="display:inline-block; width:100px; margin-bottom:10px;  margin-top:15px; color:#777">标题&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:300px; margin-bottom:10px; margin-top:15px; color:#777">内容&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">个人分类&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">文章类型&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">博客分类&nbsp;&nbsp;&nbsp;&nbsp;</label>
-	<label style="display:inline-block; width:200px; margin-bottom:10px; margin-top:15px; color:#777">时间&nbsp;&nbsp;&nbsp;&nbsp;</label>
+<font color="#999">
+<table>
+<tr>
+<td><label style="display:inline-block; width:100px; margin-bottom:10px;  margin-top:15px; color:#777">标题&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+<td><label style="display:inline-block; width:300px; margin-bottom:10px; margin-top:15px; color:#777">内容&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+<td><label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">个人分类&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+<td><label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">文章类型&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+<td><label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">博客分类&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+<td><label style="display:inline-block; width:200px; margin-bottom:10px; margin-top:15px; color:#777">时间&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+</tr>
+</table>
+</font>
 <?php
 	include("conn.php");
 	session_start();
@@ -113,14 +119,21 @@
 	$sql = mysql_query("SELECT * FROM article WHERE phone = $phone ");
 
 	while($row = mysql_fetch_array($sql))
-  	{	echo "<br />";
+  	{	
 	?>
-    <a href="FullArticle.php?Id=<?php echo $row['Id'];?>" style="display:inline-block; width:100px;"><?php echo  $row['title']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-    <label style="display:inline-block; width:300px; margin-top:5px;"><?php echo  substr($row['content'],0,40); ?>...&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-	<label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?>&nbsp;&nbsp;&nbsp;&nbsp;</label>	
+	<table>
+	<tr>
+    <td><a href="FullArticle.php?Id=<?php echo $row['Id'];?>" >
+	<label style="display:inline-block; width:80px; margin-top:5px; text-decoration:underline; overflow:hidden; white-space:nowrap;"><?php echo  $row['title']; ?></label>
+	</a></td>	
+    <td><label style="display:inline-block; width:300px; margin-top:5px; margin-left:20px;"><?php echo  substr($row['content'],0,40); ?>...</label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['PersonalType']; ?></label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['EssayType']; ?></label></td>
+    <td><label style="display:inline-block; width:100px; margin-top:5px;"><?php echo  $row['BlogType']; ?></label></td>
+	<td><label style="display:inline-block; width:200px; margin-top:5px;"><?php echo  $row['DataTime']; ?></label></td>
+	</tr>
+	</table>	
+	
   	<?php	
   	}
 

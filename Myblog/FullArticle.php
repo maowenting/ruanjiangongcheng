@@ -60,7 +60,7 @@ color:#777; background-color:#eee; font-size:20px; border:none">
 ?>
 </div>
 <br/><br/>
-<div name="content" contenteditable="false" style=" width:860px; height:300px; resize:none; 
+<div name="content" contenteditable="false" style=" width:860px; resize:none; 
 color:#777; background-color:#fff; font-size:20px; border:1px solid #eee" >
 <?php
 	include("conn.php");
@@ -85,13 +85,16 @@ color:#777; background-color:#fff; font-size:20px; border:1px solid #eee" >
 <input type="text"  name="comment" style="resize:none;margin-top:15px; width:60%; height:24px;"></textarea>&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="submit" value="评论" style=" width:60px;height:28px;" ></input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="Article-Management.php">
-<button value="返回" style=" width:60px;height:28px;">返回</button>
+
 </a>
 </form>
 
  <label style="display:inline-block; width:550px; margin-bottom:10px; margin-top:15px; color:#777">评论</label>
  <label style="display:inline-block; width:120px; margin-bottom:10px; margin-top:15px; color:#777">评论者账号</label>
  <label style="display:inline-block; width:100px; margin-bottom:10px; margin-top:15px; color:#777">评论时间</label>
+ &nbsp;&nbsp;
+ <a href="Article-Management.php">
+<button value="返回" style=" width:60px;height:28px;">返回</button></a>
 <?php 
 	include("conn.php");
 	$articleID = $_GET['Id'];
@@ -112,6 +115,7 @@ color:#777; background-color:#fff; font-size:20px; border:1px solid #eee" >
 	mysql_close($conn);
 ?>
 
+
  </div>
  
 <div class="nav">
@@ -121,6 +125,7 @@ color:#777; background-color:#fff; font-size:20px; border:1px solid #eee" >
 <li><a href='Classification-Management.php'>个人分类管理</a></li>
 </br>
 <li><a href='zhuye.php'>返回首页</a></li>
+<li><a href='ChangePWD.php'>修改密码</a></li>
 </ul>
 </div>
 </div> 
