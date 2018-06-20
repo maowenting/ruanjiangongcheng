@@ -41,7 +41,7 @@
 <div class="login">
     <form action="register_submit.php" method="post">
 	<p>手机</p>  
-    <textarea name="phone"> </textarea>
+    <textarea name="phone"></textarea>
     <p>姓名</p>  
     <textarea name="name"></textarea>
     <p>密码</p>  
