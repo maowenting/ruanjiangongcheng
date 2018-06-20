@@ -7,7 +7,8 @@
 	include("conn.php");
 	session_start();
    	$phone = $_SESSION['phone'];
-	$Time = date('y-m-d h:i:s',time());
+	date_default_timezone_set('PRC');
+	$Time = date('y-m-d H:i:s',time());
 	$comment = $_POST['comment'];
 	$articleID = $_POST['ArticleID'];
 	$sql = mysql_query("INSERT INTO comment (ArticleID,CommentContent,phone,DataTime) values ('$articleID','$comment','$phone','$Time')");

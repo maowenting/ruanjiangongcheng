@@ -12,7 +12,8 @@
 	$PersonalType = $_POST['personaltype'];
 	$EssayType = $_POST['essaytype'];
 	$BlogType = $_POST['blogtype'];
-	$DataTime = date('y-m-d h:i:s',time());
+	date_default_timezone_set('PRC');
+	$DataTime = date('y-m-d H:i:s',time());
 	$sql = mysql_query("INSERT INTO article (title,content,PersonalType,EssayType,BlogType,phone,DataTime) values 	('$title','$content','$PersonalType','$EssayType','$BlogType','$phone','$DataTime')");
 	mysql_close($conn);
 	header('location:Article-Management.php');
